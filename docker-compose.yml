@@ -7,7 +7,9 @@ services:
     # ports:
     #   - "5432:5432"
     volumes:
-      - ".:/app"       
+      - ".:/app"
+    environment:
+      - POSTGRES_PASSWORD=vr_basemaps
   webserver:
     depends_on: [postgis]
     build: 
@@ -15,4 +17,4 @@ services:
     ports:
         - "80:80"
     volumes:
-        - ".:/app" 
+        - ".:/app"
